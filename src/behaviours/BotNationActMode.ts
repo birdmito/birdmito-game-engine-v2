@@ -132,7 +132,7 @@ export class BotNationActMode {
                 else if (operatedObject.unitParam.name === '士兵' && this.timesOfSameOperateIndex < 3) {
                     this.operateNext();
                 }
-                else if (operatedObject.unitParam.name === '骑兵' || '战法师' || '自行火炮' && this.timesOfSameOperateIndex < 3) {
+                else if (['骑兵', '战法师', '自行火炮'].includes(operatedObject.unitParam.name) && this.timesOfSameOperateIndex < 3) {
                     //移动到随机一个敌方城市
                     if (operatedObject.provinceToGo === null) {
                         if (this.nation.enemyNationList[0].provinceOwnedList.length === 0) {
